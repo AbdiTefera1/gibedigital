@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Palette, Video, Globe, Smartphone, Share2, BarChart3, Printer, Calendar, ArrowRight, Users, Target, Lightbulb, Award, Zap, Star, Rocket, Sparkles } from 'lucide-react'
+import { Palette, Video, Globe, Smartphone, Share2, BarChart3, Printer, Calendar, ArrowRight, Users, Target, Lightbulb, Award, Zap, Star, Rocket, Sparkles, Quote } from 'lucide-react'
 
 interface HomePageProps {
   setCurrentPage: (page: string) => void;
@@ -16,6 +16,60 @@ const HomePage = ({ setCurrentPage }: HomePageProps) => {
         { icon: BarChart3, title: 'Digital Marketing', desc: 'Data-driven marketing campaigns and analytics', color: 'text-indigo-600' },
         { icon: Printer, title: 'Printing Solutions', desc: 'High-quality print design and production', color: 'text-teal-600' }
     ];
+
+    const testimonials = [
+        {
+            name: "Sarah Johnson",
+            role: "CEO, TechStart Solutions",
+            image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
+            content: "Gibe Digital completely transformed our brand identity. Their creative vision and attention to detail exceeded our expectations. Our website traffic increased by 300% after the rebrand!",
+            rating: 5,
+            company: "TechStart Solutions"
+        },
+        {
+            name: "Michael Chen",
+            role: "Marketing Director, GrowthCorp",
+            image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+            content: "Working with Gibe Digital was a game-changer for our digital marketing strategy. Their data-driven approach and creative campaigns delivered outstanding results. Highly recommended!",
+            rating: 5,
+            company: "GrowthCorp"
+        },
+        {
+            name: "Emily Rodriguez",
+            role: "Founder, Creative Spaces",
+            image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+            content: "The team's expertise in UI/UX design is unmatched. They created an intuitive and beautiful app interface that our users absolutely love. Our user engagement has skyrocketed!",
+            rating: 5,
+            company: "Creative Spaces"
+        },
+        {
+            name: "David Thompson",
+            role: "Business Owner, Local Eats",
+            image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face",
+            content: "From social media management to website development, Gibe Digital handled everything perfectly. They understood our vision and brought it to life better than we imagined.",
+            rating: 5,
+            company: "Local Eats"
+        },
+        {
+            name: "Lisa Park",
+            role: "Operations Manager, InnovateNow",
+            image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=150&h=150&fit=crop&crop=face",
+            content: "Their video editing and production services are top-notch. The promotional videos they created for us have been incredibly effective in showcasing our products.",
+            rating: 5,
+            company: "InnovateNow"
+        },
+        {
+            name: "James Wilson",
+            role: "Startup Founder, NextGen Apps",
+            image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+            content: "Gibe Digital's comprehensive approach to digital solutions saved us time and money. Their team is professional, creative, and delivers on every promise. Five stars!",
+            rating: 5,
+            company: "NextGen Apps"
+        }
+    ];
+
+    // Duplicate testimonials for seamless infinite scroll
+    const duplicatedTestimonials = [...testimonials, ...testimonials];
 
     const floatingElements = [
         { icon: Star, color: 'text-yellow-400', size: 'w-6 h-6', position: 'top-20 left-10' },
@@ -315,6 +369,126 @@ const HomePage = ({ setCurrentPage }: HomePageProps) => {
                 <Zap size={20} />
               </div>
             </motion.button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Testimonials Section with Horizontal Scrolling Animation */}
+      <section className="relative py-20 bg-gradient-to-br from-gray-50 to-purple-50 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <div className="inline-flex items-center gap-2 bg-purple-100 px-4 py-2 rounded-full mb-6">
+              <Quote className="w-5 h-5 text-purple-600" />
+              <span className="text-purple-700 font-medium">Client Stories</span>
+            </div>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              What Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Happy Clients</span> Say
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Don't just take our word for it. Here's what our amazing clients have to say about their experience working with us.
+            </p>
+          </motion.div>
+
+          {/* Horizontal Scrolling Container */}
+          <div className="relative">
+            <div className="overflow-hidden">
+              <motion.div 
+                className="flex gap-8"
+                animate={{
+                  x: ['0%', '-50%']
+                }}
+                transition={{
+                  duration: 40,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+              >
+                {duplicatedTestimonials.map((testimonial, index) => (
+                  <motion.div
+                    key={index}
+                    className="flex-shrink-0 w-96 bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 relative overflow-hidden group"
+                    whileHover={{ 
+                      y: -8,
+                      scale: 1.02,
+                      transition: { duration: 0.3 }
+                    }}
+                  >
+                    {/* Background Decoration */}
+                    <motion.div
+                      className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full opacity-50 -mr-10 -mt-10 group-hover:scale-150 transition-transform duration-500"
+                    />
+                    
+                    {/* Quote Icon */}
+                    <div className="absolute top-6 right-6 opacity-10">
+                      <Quote className="w-12 h-12 text-purple-600" />
+                    </div>
+
+                    {/* Rating Stars */}
+                    <div className="flex items-center gap-1 mb-4 relative z-10">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                      ))}
+                    </div>
+
+                    {/* Testimonial Content */}
+                    <p className="text-gray-700 mb-6 leading-relaxed relative z-10 italic">
+                      "{testimonial.content}"
+                    </p>
+
+                    {/* Client Info */}
+                    <div className="flex items-center gap-4 relative z-10">
+                      <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                        {testimonial.name.charAt(0)}
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900 group-hover:text-purple-600 transition-colors">
+                          {testimonial.name}
+                        </h4>
+                        <p className="text-sm text-gray-600">{testimonial.role}</p>
+                        <p className="text-xs text-purple-600 font-medium">{testimonial.company}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
+            
+            {/* Gradient Overlays */}
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-50 to-transparent pointer-events-none z-10"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-purple-50 to-transparent pointer-events-none z-10"></div>
+          </div>
+
+          {/* Additional Stats */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="grid md:grid-cols-4 gap-8 mt-16 text-center"
+          >
+            {[
+              { number: "150+", label: "Happy Clients", icon: Users },
+              { number: "500+", label: "Projects Completed", icon: Rocket },
+              { number: "99%", label: "Client Satisfaction", icon: Star },
+              { number: "5★", label: "Average Rating", icon: Award }
+            ].map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white/50 backdrop-blur-sm p-6 rounded-2xl border border-white/60"
+              >
+                <stat.icon className="w-8 h-8 text-purple-600 mx-auto mb-3" />
+                <div className="text-3xl font-bold text-gray-900 mb-1">{stat.number}</div>
+                <div className="text-sm text-gray-600 font-medium">{stat.label}</div>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>
