@@ -12,12 +12,12 @@ const Navigation = ({ currentPage, setCurrentPage }: NavigationProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   
   const navItems = [
-    { name: 'home', icon: '🏠' },
-    { name: 'about', icon: '✨' },
-    { name: 'services', icon: '🚀' },
-    { name: 'portfolio', icon: '🎨' },
-    { name: 'booking', icon: '📅' },
-    { name: 'contact', icon: '💬' }
+    { name: 'home', icon: '' },
+    { name: 'about', icon: '' },
+    { name: 'services', icon: '' },
+    // { name: 'portfolio', icon: '🎨' },
+    // { name: 'booking', icon: '📅' },
+    { name: 'contact', icon: '' }
   ];
 
   return (
@@ -122,7 +122,7 @@ const Navigation = ({ currentPage, setCurrentPage }: NavigationProps) => {
                           'linear-gradient(45deg, #10b981, #9333ea)'
                         ]
                       }}
-                      transition={{ duration: 3, repeat: Infinity }}
+                      // transition={{ duration: 3, repeat: Infinity }}
                       layoutId="activeNavItem"
                     />
                   )}

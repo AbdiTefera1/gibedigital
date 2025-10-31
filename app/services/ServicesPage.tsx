@@ -14,33 +14,33 @@ const ServicesPage = ({ setCurrentPage }: ServicesPageProps) => {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
   const services = [
-    { 
-      icon: Palette, 
-      title: 'Graphics & Branding', 
-      desc: 'Creative visual identity and brand design solutions that make your business unforgettable',
-      category: 'design',
-      features: ['Logo Design', 'Brand Guidelines', 'Marketing Materials', 'Print Design'],
-      price: 'From $299',
-      gradient: 'from-pink-500 to-rose-500',
-      bgGradient: 'from-pink-50 to-rose-50'
-    },
-    { 
-      icon: Video, 
-      title: 'Video Production', 
-      desc: 'Professional video content that tells your story and captivates your audience',
-      category: 'media',
-      features: ['Video Editing', 'Motion Graphics', 'Color Grading', 'Sound Design'],
-      price: 'From $499',
-      gradient: 'from-purple-500 to-indigo-500',
-      bgGradient: 'from-purple-50 to-indigo-50'
-    },
+    // { 
+    //   icon: Palette, 
+    //   title: 'Graphics & Branding', 
+    //   desc: 'Creative visual identity and brand design solutions that make your business unforgettable',
+    //   category: 'design',
+    //   features: ['Logo Design', 'Brand Guidelines', 'Marketing Materials', 'Print Design'],
+    //   // price: 'From $299',
+    //   gradient: 'from-pink-500 to-rose-500',
+    //   bgGradient: 'from-pink-50 to-rose-50'
+    // },
+    // { 
+    //   icon: Video, 
+    //   title: 'Video Production', 
+    //   desc: 'Professional video content that tells your story and captivates your audience',
+    //   category: 'media',
+    //   features: ['Video Editing', 'Motion Graphics', 'Color Grading', 'Sound Design'],
+    //   price: 'From $499',
+    //   gradient: 'from-purple-500 to-indigo-500',
+    //   bgGradient: 'from-purple-50 to-indigo-50'
+    // },
     { 
       icon: Globe, 
       title: 'Web Development', 
       desc: 'Modern, lightning-fast websites that convert visitors into customers',
       category: 'development',
       features: ['Responsive Design', 'E-commerce', 'CMS Integration', 'SEO Optimization'],
-      price: 'From $799',
+      // price: 'From $799',
       gradient: 'from-blue-500 to-cyan-500',
       bgGradient: 'from-blue-50 to-cyan-50'
     },
@@ -50,7 +50,7 @@ const ServicesPage = ({ setCurrentPage }: ServicesPageProps) => {
       desc: 'Intuitive digital experiences that users love and remember',
       category: 'design',
       features: ['User Research', 'Wireframing', 'Prototyping', 'User Testing'],
-      price: 'From $599',
+      // price: 'From $599',
       gradient: 'from-emerald-500 to-teal-500',
       bgGradient: 'from-emerald-50 to-teal-50'
     },
@@ -60,30 +60,30 @@ const ServicesPage = ({ setCurrentPage }: ServicesPageProps) => {
       desc: 'Strategic social presence that builds communities and drives engagement',
       category: 'marketing',
       features: ['Content Strategy', 'Post Scheduling', 'Community Management', 'Analytics'],
-      price: 'From $399',
+      // price: 'From $399',
       gradient: 'from-orange-500 to-amber-500',
       bgGradient: 'from-orange-50 to-amber-50'
     },
-    { 
-      icon: BarChart3, 
-      title: 'Digital Marketing', 
-      desc: 'Data-driven campaigns that maximize ROI and accelerate growth',
-      category: 'marketing',
-      features: ['PPC Advertising', 'Email Marketing', 'Analytics', 'Conversion Optimization'],
-      price: 'From $699',
-      gradient: 'from-violet-500 to-purple-500',
-      bgGradient: 'from-violet-50 to-purple-50'
-    },
-    { 
-      icon: Printer, 
-      title: 'Print Solutions', 
-      desc: 'High-impact print materials that leave lasting impressions',
-      category: 'design',
-      features: ['Business Cards', 'Brochures', 'Packaging', 'Large Format'],
-      price: 'From $199',
-      gradient: 'from-red-500 to-pink-500',
-      bgGradient: 'from-red-50 to-pink-50'
-    }
+    // { 
+    //   icon: BarChart3, 
+    //   title: 'Digital Marketing', 
+    //   desc: 'Data-driven campaigns that maximize ROI and accelerate growth',
+    //   category: 'marketing',
+    //   features: ['PPC Advertising', 'Email Marketing', 'Analytics', 'Conversion Optimization'],
+    //   // price: 'From $699',
+    //   gradient: 'from-violet-500 to-purple-500',
+    //   bgGradient: 'from-violet-50 to-purple-50'
+    // },
+    // { 
+    //   icon: Printer, 
+    //   title: 'Print Solutions', 
+    //   desc: 'High-impact print materials that leave lasting impressions',
+    //   category: 'design',
+    //   features: ['Business Cards', 'Brochures', 'Packaging', 'Large Format'],
+    //   price: 'From $199',
+    //   gradient: 'from-red-500 to-pink-500',
+    //   bgGradient: 'from-red-50 to-pink-50'
+    // }
   ];
 
   const categories = [
@@ -91,7 +91,7 @@ const ServicesPage = ({ setCurrentPage }: ServicesPageProps) => {
     { id: 'design', name: 'Design', icon: Palette },
     { id: 'development', name: 'Development', icon: Globe },
     { id: 'marketing', name: 'Marketing', icon: TrendingUp },
-    { id: 'media', name: 'Media', icon: Video }
+    // { id: 'media', name: 'Media', icon: Video }
   ];
 
   const filteredServices = selectedCategory === 'all' 
@@ -99,7 +99,7 @@ const ServicesPage = ({ setCurrentPage }: ServicesPageProps) => {
     : services.filter(service => service.category === selectedCategory);
 
   return (
-    <div className="pt-24 pb-16 min-h-screen">
+    <div className="pt-24 min-h-screen">
       {/* Hero Section */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900" />
@@ -140,12 +140,12 @@ const ServicesPage = ({ setCurrentPage }: ServicesPageProps) => {
               animate={{ scale: 1 }}
               transition={{ delay: 0.2 }}
             >
-              <Zap className="w-5 h-5" />
+              <Zap className="w-5 h-5 text-pink-400" />
               <span className="font-medium">Premium Digital Services</span>
             </motion.div>
 
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-              Our <span className="bg-gradient-to-r from-pink-400 to-yellow-400 bg-clip-text text-transparent">Services</span>
+              Our <span className="bg-gradient-to-r from-cyan-400 to-pink-400 bg-clip-text text-transparent">Services</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto mb-8 leading-relaxed">
@@ -154,7 +154,7 @@ const ServicesPage = ({ setCurrentPage }: ServicesPageProps) => {
 
             <motion.button
               onClick={() => setCurrentPage('booking')}
-              className="inline-flex items-center gap-3 bg-gradient-to-r from-pink-500 to-violet-500 text-white px-8 py-4 rounded-2xl font-semibold text-lg shadow-2xl hover:shadow-pink-500/25 transition-all duration-300"
+              className="inline-flex items-center gap-3 bg-gradient-to-r from-cyan-500 to-pink-500 text-white px-8 py-4 rounded-2xl font-semibold text-lg shadow-2xl hover:shadow-pink-500/25 transition-all duration-300"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -275,7 +275,7 @@ const ServicesPage = ({ setCurrentPage }: ServicesPageProps) => {
                     {/* Price */}
                     <div className="flex items-center justify-between mb-6">
                       <span className={`text-2xl font-bold bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent`}>
-                        {service.price}
+                        {/* {service.price} */}
                       </span>
                       <div className="flex items-center gap-1">
                         {[...Array(5)].map((_, i) => (
@@ -285,19 +285,27 @@ const ServicesPage = ({ setCurrentPage }: ServicesPageProps) => {
                     </div>
 
                     {/* Action buttons */}
-                    <div className="flex gap-3">
+                    <div className="flex gap-3 relative z-10">
+                      {/* View Details Button */}
                       <motion.button
+                        type="button"
                         className={`flex-1 bg-gradient-to-r ${service.gradient} text-white px-4 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2`}
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
+                        onClick={() => console.log("View Details clicked")}
                       >
                         <Eye className="w-4 h-4" />
                         View Details
                       </motion.button>
-                      
-                      <motion.button 
-                        onClick={() => setCurrentPage('booking')}
+
+                      {/* Book Now Button */}
+                      <motion.button
+                        type="button"
                         className="flex-1 border-2 border-gray-300 text-gray-700 hover:border-purple-500 hover:text-purple-600 hover:bg-purple-50 px-4 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2"
+                        onClick={() => {
+                          console.log("Book Now clicked");
+                          setCurrentPage("booking");
+                        }}
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                       >
@@ -320,7 +328,7 @@ const ServicesPage = ({ setCurrentPage }: ServicesPageProps) => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-purple-900 to-pink-900 relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-r from-indigo-900 to-purple-900 relative overflow-hidden">
         <div className="absolute inset-0">
           {[...Array(20)].map((_, i) => (
             <motion.div

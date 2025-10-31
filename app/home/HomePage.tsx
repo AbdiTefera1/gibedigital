@@ -8,13 +8,13 @@ interface HomePageProps {
 
 const HomePage = ({ setCurrentPage }: HomePageProps) => {
     const services = [
-        { icon: Palette, title: 'Graphics & Branding', desc: 'Creative visual identity and brand design solutions', color: 'text-purple-600' },
-        { icon: Video, title: 'Video Editing', desc: 'Professional video production and post-production', color: 'text-red-600' },
+        // { icon: Palette, title: 'Graphics & Branding', desc: 'Creative visual identity and brand design solutions', color: 'text-purple-600' },
+        // { icon: Video, title: 'Video Editing', desc: 'Professional video production and post-production', color: 'text-red-600' },
         { icon: Globe, title: 'Website Development', desc: 'Modern, responsive websites and web applications', color: 'text-blue-600' },
         { icon: Smartphone, title: 'UI/UX Design', desc: 'User-centered design for digital experiences', color: 'text-green-600' },
         { icon: Share2, title: 'Social Media Management', desc: 'Strategic social media presence and content', color: 'text-pink-600' },
-        { icon: BarChart3, title: 'Digital Marketing', desc: 'Data-driven marketing campaigns and analytics', color: 'text-indigo-600' },
-        { icon: Printer, title: 'Printing Solutions', desc: 'High-quality print design and production', color: 'text-teal-600' }
+        // { icon: BarChart3, title: 'Digital Marketing', desc: 'Data-driven marketing campaigns and analytics', color: 'text-indigo-600' },
+        // { icon: Printer, title: 'Printing Solutions', desc: 'High-quality print design and production', color: 'text-teal-600' }
     ];
 
     const testimonials = [
@@ -202,14 +202,14 @@ const HomePage = ({ setCurrentPage }: HomePageProps) => {
               </motion.button>
 
               <motion.button 
-                onClick={() => setCurrentPage('portfolio')}
+                onClick={() => setCurrentPage('about')}
                 className="group relative border-3 border-pink-500 text-pink-500 px-10 py-4 rounded-2xl font-semibold text-lg hover:bg-pink-500 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
               >
                 <div className="flex items-center gap-2">
                   <Rocket size={24} />
-                  Explore Our Work
+                  Our Story
                 </div>
               </motion.button>
             </motion.div>
@@ -494,7 +494,7 @@ const HomePage = ({ setCurrentPage }: HomePageProps) => {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-24 bg-gradient-to-r from-gray-900 via-purple-900 to-blue-900 overflow-hidden">
+      <section className="relative py-24 bg-gradient-to-r from-indigo-900 to-purple-900 overflow-hidden">
         <motion.div
           className="absolute inset-0"
           animate={{

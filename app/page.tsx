@@ -16,9 +16,9 @@ export default function Home() {
   const renderCurrentPage = (setCurrentPage: (page: string) => void) => {
     switch(currentPage) {
       case 'home': return <HomePage setCurrentPage={setCurrentPage} />;
-      case 'about': return <AboutPage />;
+      case 'about': return <AboutPage setCurrentPage={setCurrentPage} />;
       case 'services': return <ServicesPage setCurrentPage={setCurrentPage} />;
-      case 'portfolio': return <PortfolioPage setCurrentPage={setCurrentPage} />;
+      // case 'portfolio': return <PortfolioPage setCurrentPage={setCurrentPage} />;
       case 'booking': return <BookingPage setCurrentPage={setCurrentPage} />;
       case 'contact': return <ContactPage setCurrentPage={setCurrentPage} />;
       default: return <HomePage setCurrentPage={setCurrentPage} />;
