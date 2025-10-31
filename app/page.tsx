@@ -5,7 +5,7 @@ import HomePage from "./home/HomePage";
 import { AnimatePresence, motion } from "framer-motion";
 import AboutPage from "./about/AboutPage";
 import ServicesPage from "./services/ServicesPage";
-import PortfolioPage from "./portfolio/PortfolioPage";
+// import PortfolioPage from "./portfolio/PortfolioPage";
 import BookingPage from "./booking/BookingPage";
 import ContactPage from "./contact/ContactPage";
 import Footer from "@/components/Footer";

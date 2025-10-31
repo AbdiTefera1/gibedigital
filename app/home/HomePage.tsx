@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Palette, Video, Globe, Smartphone, Share2, BarChart3, Printer, Calendar, ArrowRight, Users, Target, Lightbulb, Award, Zap, Star, Rocket, Sparkles, Quote } from 'lucide-react'
+import { Globe, Smartphone, Share2, Calendar, ArrowRight, Users, Target, Lightbulb, Award, Zap, Star, Rocket, Sparkles, Quote } from 'lucide-react'
 
 interface HomePageProps {
   setCurrentPage: (page: string) => void;
@@ -390,7 +390,7 @@ const HomePage = ({ setCurrentPage }: HomePageProps) => {
               What Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Happy Clients</span> Say
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Don't just take our word for it. Here's what our amazing clients have to say about their experience working with us.
+              Don&apos;t just take our word for it. Here&apos;s what our amazing clients have to say about their experience working with us.
             </p>
           </motion.div>
 
@@ -437,7 +437,7 @@ const HomePage = ({ setCurrentPage }: HomePageProps) => {
 
                     {/* Testimonial Content */}
                     <p className="text-gray-700 mb-6 leading-relaxed relative z-10 italic">
-                      "{testimonial.content}"
+                    &quot;{testimonial.content}&quot;
                     </p>
 
                     {/* Client Info */}
@@ -525,7 +525,7 @@ const HomePage = ({ setCurrentPage }: HomePageProps) => {
               Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-pink-400">Shine</span>?
             </h2>
             <p className="text-xl text-purple-100 mb-10 max-w-2xl mx-auto">
-              Let's create something extraordinary together. Your digital transformation starts with a single click.
+              Let&apos;s create something extraordinary together. Your digital transformation starts with a single click.
             </p>
             
             <motion.button 

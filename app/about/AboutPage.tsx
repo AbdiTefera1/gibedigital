@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
-  Lightbulb, Target, Eye, Star, Users, Award, Zap, Heart,
-  ArrowRight, Play, CheckCircle, TrendingUp, Globe, Sparkles,
-  Coffee, Clock, MapPin, Calendar
+  Lightbulb, Target, Eye, Star, Users, Award, Heart,
+  ArrowRight, Globe, Sparkles,
+  Coffee, MapPin, Calendar
 } from 'lucide-react'
 
 interface ServicesPageProps {
@@ -14,12 +14,12 @@ const AboutPage = ({ setCurrentPage }: ServicesPageProps) => {
   const [activeTab, setActiveTab] = useState('story');
   const [hoveredValue, setHoveredValue] = useState<number | null>(null);
 
-  const stats = [
-    { number: '500+', label: 'Projects Completed', icon: CheckCircle },
-    { number: '150+', label: 'Happy Clients', icon: Heart },
-    { number: '5+', label: 'Years Experience', icon: Clock },
-    { number: '24/7', label: 'Support Available', icon: Zap }
-  ];
+  // const stats = [
+  //   { number: '500+', label: 'Projects Completed', icon: CheckCircle },
+  //   { number: '150+', label: 'Happy Clients', icon: Heart },
+  //   { number: '5+', label: 'Years Experience', icon: Clock },
+  //   { number: '24/7', label: 'Support Available', icon: Zap }
+  // ];
 
   const values = [
     {
@@ -418,10 +418,10 @@ const AboutPage = ({ setCurrentPage }: ServicesPageProps) => {
           >
             <Coffee className="w-16 h-16 text-white/80 mx-auto mb-6" />
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Let's Create Something Amazing Together
+              Let&apos;s Create Something Amazing Together
             </h2>
             <p className="text-xl text-white/80 mb-8">
-              Ready to transform your digital presence? We'd love to hear about your project.
+              Ready to transform your digital presence? We&apos;d love to hear about your project.
             </p>
             
             <motion.button

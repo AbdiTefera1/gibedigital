@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import React, { useState } from 'react'
 import { 
   ExternalLink, Eye, Heart, Star, Award, Zap, 
-  Play, Image, Code, Megaphone, Printer, Palette,
+  Play, Code, Megaphone, Printer, Palette,
   ArrowRight, Sparkles, TrendingUp
 } from 'lucide-react';
 
@@ -120,7 +120,7 @@ const PortfolioPage = ({ setCurrentPage }: PortfolioPageProps) => {
 
   const [filter, setFilter] = useState('All');
   const [hoveredItem, setHoveredItem] = useState<number | null>(null);
-  const [selectedItem, setSelectedItem] = useState<number | null>(null);
+  // const [selectedItem, setSelectedItem] = useState<number | null>(null);
 
   const categories = [
     { name: 'All', icon: Sparkles, count: portfolioItems.length },
@@ -184,11 +184,11 @@ const PortfolioPage = ({ setCurrentPage }: PortfolioPageProps) => {
             </motion.div>
 
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-              Our <span className="bg-gradient-to-r from-yellow-400 to-pink-400 bg-clip-text text-transparent">Portfolio</span>
+              Our <span className="bg-linear-to-r from-yellow-400 to-pink-400 bg-clip-text text-transparent">Portfolio</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto mb-8 leading-relaxed">
-              Explore our creative works and see how we've helped businesses transform their digital presence and achieve remarkable success.
+              Explore our creative works and see how we&apos;ve helped businesses transform their digital presence and achieve remarkable success.
             </p>
 
             <motion.div
@@ -197,7 +197,7 @@ const PortfolioPage = ({ setCurrentPage }: PortfolioPageProps) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
-              <button className="inline-flex items-center gap-3 bg-gradient-to-r from-pink-500 to-violet-500 text-white px-8 py-4 rounded-2xl font-semibold text-lg shadow-2xl hover:shadow-pink-500/25 transition-all duration-300">
+              <button className="inline-flex items-center gap-3 bg-linear-to-r from-pink-500 to-violet-500 text-white px-8 py-4 rounded-2xl font-semibold text-lg shadow-2xl hover:shadow-pink-500/25 transition-all duration-300">
                 <Eye className="w-6 h-6" />
                 View All Projects
               </button>
@@ -326,7 +326,7 @@ const PortfolioPage = ({ setCurrentPage }: PortfolioPageProps) => {
                 onClick={() => setFilter(category.name)}
                 className={`flex items-center gap-3 px-6 py-3 rounded-2xl font-semibold transition-all duration-300 ${
                   filter === category.name
-                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg'
+                    ? 'bg-linear-to-r from-purple-600 to-pink-600 text-white shadow-lg'
                     : 'bg-gray-100 text-gray-700 hover:bg-purple-50 hover:text-purple-600'
                 }`}
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -357,7 +357,7 @@ const PortfolioPage = ({ setCurrentPage }: PortfolioPageProps) => {
                   className="group cursor-pointer"
                   onHoverStart={() => setHoveredItem(item.id)}
                   onHoverEnd={() => setHoveredItem(null)}
-                  onClick={() => setSelectedItem(item.id)}
+                  // onClick={() => setSelectedItem(item.id)}
                 >
                   <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
                     <div className={`h-64 ${item.image} relative`}>
@@ -384,7 +384,7 @@ const PortfolioPage = ({ setCurrentPage }: PortfolioPageProps) => {
                       {/* Featured badge */}
                       {item.featured && (
                         <div className="absolute top-4 left-4">
-                          <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-3 py-1 rounded-full font-bold text-xs flex items-center gap-1">
+                          <div className="bg-linear-to-r from-yellow-400 to-orange-500 text-black px-3 py-1 rounded-full font-bold text-xs flex items-center gap-1">
                             <Star className="w-3 h-3" />
                             Featured
                           </div>
@@ -436,7 +436,7 @@ const PortfolioPage = ({ setCurrentPage }: PortfolioPageProps) => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-indigo-900 to-purple-900 relative overflow-hidden">
+      <section className="py-20 bg-linear-to-r from-indigo-900 to-purple-900 relative overflow-hidden">
         <div className="absolute inset-0">
           {[...Array(15)].map((_, i) => (
             <motion.div
@@ -468,7 +468,7 @@ const PortfolioPage = ({ setCurrentPage }: PortfolioPageProps) => {
               Ready to Create Something Amazing?
             </h2>
             <p className="text-xl text-white/80 mb-8">
-              Let's bring your vision to life with our expert team and proven process.
+              Let&apos;s bring your vision to life with our expert team and proven process.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

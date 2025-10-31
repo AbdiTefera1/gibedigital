@@ -122,7 +122,7 @@ const ContactPage = ({ setCurrentPage }: ContactPageProps) => {
                             transition={{ delay: 0.2 }}
                         >
                             <Heart className="w-5 h-5 text-pink-400" />
-                            <span className="font-medium">Let's Create Something Amazing</span>
+                            <span className="font-medium">Let&apos;s Create Something Amazing</span>
                         </motion.div>
 
                         <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
@@ -130,7 +130,7 @@ const ContactPage = ({ setCurrentPage }: ContactPageProps) => {
                         </h1>
                         
                         <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto mb-12 leading-relaxed">
-                            Ready to transform your digital presence? We're here to make your vision a reality.
+                            Ready to transform your digital presence? We&apos;re here to make your vision a reality.
                         </p>
 
                         {/* Stats */}
@@ -213,7 +213,7 @@ const ContactPage = ({ setCurrentPage }: ContactPageProps) => {
                                         </div>
                                         <div>
                                             <h2 className="text-2xl font-bold text-gray-900">Send us a message</h2>
-                                            <p className="text-gray-600">We'll get back to you within 24 hours</p>
+                                            <p className="text-gray-600">We&apos;ll get back to you within 24 hours</p>
                                         </div>
                                     </div>
 
@@ -342,7 +342,7 @@ const ContactPage = ({ setCurrentPage }: ContactPageProps) => {
                                                 </motion.div>
                                                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Message Sent!</h3>
                                                 <p className="text-gray-600 mb-6">
-                                                    Thank you for reaching out. We'll get back to you within 24 hours.
+                                                    Thank you for reaching out. We&apos;ll get back to you within 24 hours.
                                                 </p>
                                             </motion.div>
                                         )}
@@ -480,13 +480,13 @@ const ContactPage = ({ setCurrentPage }: ContactPageProps) => {
                         <div className="flex items-center justify-center gap-2 mb-6">
                             <Sparkles className="w-8 h-8 text-yellow-400" />
                             <h2 className="text-4xl md:text-5xl font-bold text-white">
-                                Let's Build Something Amazing
+                                Let&apos;s Build Something Amazing
                             </h2>
                             <Sparkles className="w-8 h-8 text-yellow-400" />
                         </div>
                         
                         <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-                            Ready to take your business to the next level? We're excited to hear about your project and help you succeed.
+                            Ready to take your business to the next level? We&apos;re excited to hear about your project and help you succeed.
                         </p>
                         
                         <motion.button

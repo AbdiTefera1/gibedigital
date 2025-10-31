@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
-  Palette, Video, Globe, Smartphone, Share2, BarChart3, Printer,
+  Palette, Globe, Smartphone, Share2,
   Star, ArrowRight, Check, Zap, Sparkles, Eye, TrendingUp
 } from 'lucide-react'
 
@@ -360,7 +360,7 @@ const ServicesPage = ({ setCurrentPage }: ServicesPageProps) => {
               Ready to Transform Your Business?
             </h2>
             <p className="text-xl text-white/80 mb-8">
-              Let's discuss your project and create something amazing together.
+              Let&apos;s discuss your project and create something amazing together.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

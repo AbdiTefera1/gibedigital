@@ -3,8 +3,7 @@ import { motion } from 'framer-motion'
 import { 
   Facebook, Instagram, Linkedin, Twitter, Youtube, MessageCircle,
   Mail, Phone, MapPin, ArrowRight, Heart, Star, Zap,
-  Send, Clock, Award, Users,
-  Contact
+  Send, Contact
 } from 'lucide-react'
 
 const Footer = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) => {
@@ -56,12 +55,12 @@ const Footer = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) 
     'Brand Strategy'
   ]
 
-  const stats = [
-    { icon: Users, value: '500+', label: 'Happy Clients' },
-    { icon: Award, value: '50+', label: 'Awards Won' },
-    { icon: Star, value: '4.9', label: 'Rating' },
-    { icon: Clock, value: '24/7', label: 'Support' }
-  ]
+  // const stats = [
+  //   { icon: Users, value: '500+', label: 'Happy Clients' },
+  //   { icon: Award, value: '50+', label: 'Awards Won' },
+  //   { icon: Star, value: '4.9', label: 'Rating' },
+  //   { icon: Clock, value: '24/7', label: 'Support' }
+  // ]
 
   return (
     <footer className="relative inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white overflow-hidden">

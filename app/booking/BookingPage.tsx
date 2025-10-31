@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Send, Calendar, Clock, Star, CheckCircle, ArrowRight, 
+  Send, Clock, Star, CheckCircle, ArrowRight, 
   User, Mail, Phone, MessageSquare, Briefcase, Zap,
   Sparkles, Heart, Target, Rocket
 } from 'lucide-react';
@@ -89,7 +89,7 @@ const BookingPage = ({ setCurrentPage }: BookingPageProps) => {
             animate={{ scale: 1, opacity: 1 }}
             className="text-center max-w-2xl mx-auto px-4"
           >
-            <motion.div
+              <motion.div
               animate={{ 
                 scale: [1, 1.2, 1],
                 rotate: [0, 360, 0] 
@@ -99,7 +99,7 @@ const BookingPage = ({ setCurrentPage }: BookingPageProps) => {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="w-24 h-24 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-8"
+              className="w-24 h-24 bg-linear-to-r from-green-400 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-8"
             >
               <CheckCircle className="w-12 h-12 text-white" />
             </motion.div>
@@ -108,13 +108,13 @@ const BookingPage = ({ setCurrentPage }: BookingPageProps) => {
               🎉 Booking Submitted!
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              Thank you for choosing us! We'll review your request and get back to you within 24 hours with a detailed proposal.
+              Thank you for choosing us! We&apos;ll review your request and get back to you within 24 hours with a detailed proposal.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button
                 onClick={() => setCurrentPage('home')}
-                className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-xl font-semibold flex items-center justify-center gap-2"
+                className="bg-linear-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-xl font-semibold flex items-center justify-center gap-2"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -184,14 +184,14 @@ const BookingPage = ({ setCurrentPage }: BookingPageProps) => {
               </motion.div>
 
               <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-                Let's Create Something 
-                <span className="bg-gradient-to-r from-cyan-400 to-pink-400 bg-clip-text text-transparent block">
+                Let&apos;s Create Something 
+                <span className="bg-linear-to-r from-cyan-400 to-pink-400 bg-clip-text text-transparent block">
                   Amazing Together
                 </span>
               </h1>
               
               <p className="text-xl text-white/80 max-w-3xl mx-auto">
-                Ready to transform your vision into reality? Let's discuss your project and create something extraordinary.
+                Ready to transform your vision into reality? Let&apos;s discuss your project and create something extraordinary.
               </p>
             </motion.div>
           </div>
@@ -206,7 +206,7 @@ const BookingPage = ({ setCurrentPage }: BookingPageProps) => {
                   <motion.div
                     className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm ${
                       currentStep >= step
-                        ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
+                        ? 'bg-linear-to-r from-purple-600 to-pink-600 text-white'
                         : 'bg-gray-200 text-gray-600'
                     }`}
                     initial={{ scale: 0 }}
@@ -218,7 +218,7 @@ const BookingPage = ({ setCurrentPage }: BookingPageProps) => {
                   
                   {step < 3 && (
                     <div className={`h-1 w-20 mx-4 rounded-full ${
-                      currentStep > step ? 'bg-gradient-to-r from-purple-600 to-pink-600' : 'bg-gray-200'
+                      currentStep > step ? 'bg-linear-to-r from-purple-600 to-pink-600' : 'bg-gray-200'
                     }`} />
                   )}
                 </div>
@@ -258,7 +258,7 @@ const BookingPage = ({ setCurrentPage }: BookingPageProps) => {
                     >
                       <div className="text-center mb-8">
                         <h2 className="text-3xl font-bold text-gray-900 mb-4">Tell Us About Yourself</h2>
-                        <p className="text-gray-600">Let's start with some basic information so we can personalize your experience.</p>
+                        <p className="text-gray-600">Let&apos;s start with some basic information so we can personalize your experience.</p>
                       </div>
 
                       <div className="grid md:grid-cols-2 gap-6">
@@ -537,7 +537,7 @@ const BookingPage = ({ setCurrentPage }: BookingPageProps) => {
                         disabled={!isStepValid()}
                         className={`px-8 py-4 rounded-xl font-semibold flex items-center gap-3 transition-all duration-300 ${
                           isStepValid()
-                            ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:shadow-lg'
+                            ? 'bg-linear-to-r from-purple-600 to-pink-600 text-white hover:shadow-lg'
                             : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                         }`}
                         whileHover={isStepValid() ? { scale: 1.05 } : {}}
@@ -552,7 +552,7 @@ const BookingPage = ({ setCurrentPage }: BookingPageProps) => {
                         disabled={!isStepValid()}
                         className={`px-8 py-4 rounded-xl font-semibold flex items-center gap-3 transition-all duration-300 ${
                           isStepValid()
-                            ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white hover:shadow-lg'
+                            ? 'bg-linear-to-r from-green-600 to-emerald-600 text-white hover:shadow-lg'
                             : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                         }`}
                         whileHover={isStepValid() ? { scale: 1.05 } : {}}
@@ -580,11 +580,11 @@ const BookingPage = ({ setCurrentPage }: BookingPageProps) => {
                 transition={{ delay: 0.1 }}
                 className="flex flex-col items-center"
               >
-                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mb-4">
+                <div className="w-16 h-16 bg-linear-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mb-4">
                   <CheckCircle className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="font-bold text-gray-900 mb-2">24-Hour Response</h3>
-                <p className="text-gray-600 text-sm">We'll get back to you within 24 hours with a detailed proposal.</p>
+                <p className="text-gray-600 text-sm">We&apos;ll get back to you within 24 hours with a detailed proposal.</p>
               </motion.div>
 
               <motion.div
@@ -593,7 +593,7 @@ const BookingPage = ({ setCurrentPage }: BookingPageProps) => {
                 transition={{ delay: 0.2 }}
                 className="flex flex-col items-center"
               >
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mb-4">
+                <div className="w-16 h-16 bg-linear-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mb-4">
                   <Heart className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="font-bold text-gray-900 mb-2">100+ Happy Clients</h3>
@@ -606,7 +606,7 @@ const BookingPage = ({ setCurrentPage }: BookingPageProps) => {
                 transition={{ delay: 0.3 }}
                 className="flex flex-col items-center"
               >
-                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mb-4">
+                <div className="w-16 h-16 bg-linear-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mb-4">
                   <Zap className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="font-bold text-gray-900 mb-2">Fast Delivery</h3>
