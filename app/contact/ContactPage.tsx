@@ -3,7 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Send, Mail, Phone, MapPin, MessageCircle, Clock, Star, 
   CheckCircle, ArrowRight, Zap, Globe, Heart, Coffee,
-  Calendar, Users, Award, Sparkles
+  Calendar, Users, Sparkles,
+  Rocket
 } from 'lucide-react';
 
 interface ContactPageProps {
@@ -35,7 +36,7 @@ const ContactPage = ({ setCurrentPage }: ContactPageProps) => {
         {
             icon: Mail,
             title: 'Email Us',
-            value: 'hello@gibedigital.com',
+            value: 'gibedigital5@gmail.com',
             description: 'Get a response within 24 hours',
             color: 'from-blue-500 to-cyan-500',
             bgColor: 'from-blue-50 to-cyan-50'
@@ -43,7 +44,7 @@ const ContactPage = ({ setCurrentPage }: ContactPageProps) => {
         {
             icon: Phone,
             title: 'Call Us',
-            value: '+251-911-123-456',
+            value: '+251-940-050-709',
             description: 'Mon-Fri 9AM-6PM EAT',
             color: 'from-green-500 to-emerald-500',
             bgColor: 'from-green-50 to-emerald-50'
@@ -60,22 +61,27 @@ const ContactPage = ({ setCurrentPage }: ContactPageProps) => {
             icon: MapPin,
             title: 'Visit Us',
             value: 'Addis Ababa, Ethiopia',
-            description: 'Bole Sub City, Addis Ababa',
+            description: '',
+            // description: 'Bole Sub City, Addis Ababa',
             color: 'from-purple-500 to-pink-500',
             bgColor: 'from-purple-50 to-pink-50'
         }
     ];
 
     const services = [
-        'Web Development', 'Mobile App Development', 'UI/UX Design', 
-        'Digital Marketing', 'Branding', 'Video Production', 'Other'
+        'Web Development', 'Social Media Management', 'UI/UX Design', 
+        // 'Digital Marketing', 'Branding', 'Video Production', 'Other'
     ];
+    // const services = [
+    //     'Web Development', 'Mobile App Development', 'UI/UX Design', 
+    //     'Digital Marketing', 'Branding', 'Video Production', 'Other'
+    // ];
 
     const stats = [
-        { icon: Users, number: '500+', label: 'Happy Clients' },
-        { icon: Award, number: '98%', label: 'Success Rate' },
-        { icon: Clock, number: '24/7', label: 'Support' },
-        { icon: Star, number: '4.9/5', label: 'Rating' }
+        { number: "100+", label: "Happy Clients", icon: Users },
+        { number: "500+", label: "Projects Completed", icon: Rocket },
+        { number: "99%", label: "Client Satisfaction", icon: Star },
+        { number: '24/7', label: 'Support', icon: Clock },
     ];
 
     return (

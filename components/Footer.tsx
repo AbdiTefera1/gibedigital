@@ -5,6 +5,8 @@ import {
   Mail, Phone, MapPin, ArrowRight, Heart, Star, Zap,
   Send, Contact
 } from 'lucide-react'
+import logo from '@/public/gibe.png'
+import Image from 'next/image';
 
 const Footer = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) => {
   const [email, setEmail] = useState('')
@@ -41,7 +43,7 @@ const Footer = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) 
     { name: 'Home', page: 'home' },
     { name: 'About', page: 'about' },
     { name: 'Services', page: 'services' },
-    { name: 'Portfolio', page: 'portfolio' },
+    // { name: 'Portfolio', page: 'portfolio' },
     { name: 'Contact', page: 'contact' },
     { name: 'Book Service', page: 'booking' }
   ]
@@ -49,10 +51,11 @@ const Footer = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) 
   const services = [
     'Web Development',
     'Graphic Design',
-    'Digital Marketing',
-    'Video Production',
+    // 'Digital Marketing',
+    // 'Video Production',
     'UI/UX Design',
-    'Brand Strategy'
+    'IT Consulting',
+    // 'Brand Strategy'
   ]
 
   // const stats = [
@@ -134,12 +137,20 @@ const Footer = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) 
               >
                 <div className="flex items-center mb-6">
                   <motion.div 
-                    className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg"
+                    className="w-12 h-12 rounded-2xl flex items-center justify-center shadow-lg"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                   >
-                    <Zap className="text-white w-7 h-7" />
+                    {/* <Zap className="text-white w-7 h-7" /> */}
+                    <Image 
+                      src={logo} 
+                      alt="Gibe Digital Logo" 
+                      fill={false}
+                      width={48}
+                      height={48}
+                      className="object-contain rounded-2xl"
+                    />
                   </motion.div>
-                  <span className="ml-3 text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                  <span className="ml-3 text-2xl text-white font-bold bg-clip-text">
                     Gibe Digital
                   </span>
                 </div>
@@ -278,14 +289,14 @@ const Footer = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) 
                   whileHover={{ x: 5 }}
                 >
                   <Mail className="w-5 h-5 text-blue-400" />
-                  hello@gibedigital.com
+                  gibedigital5@gmail.com
                 </motion.div>
                 <motion.div 
                   className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors cursor-pointer"
                   whileHover={{ x: 5 }}
                 >
                   <Phone className="w-5 h-5 text-purple-400" />
-                  +251-XXX-XXX-XXX
+                  +251-940-050-709
                 </motion.div>
               </div>
             </motion.div>

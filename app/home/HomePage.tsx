@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Globe, Smartphone, Share2, Calendar, ArrowRight, Users, Target, Lightbulb, Award, Zap, Star, Rocket, Sparkles, Quote } from 'lucide-react'
+import { Globe, Smartphone, Share2, Calendar, ArrowRight, Users, Target, Lightbulb, Award, Zap, Star, Rocket, Sparkles, Quote, Clock, Cpu } from 'lucide-react'
 
 interface HomePageProps {
   setCurrentPage: (page: string) => void;
@@ -13,6 +13,7 @@ const HomePage = ({ setCurrentPage }: HomePageProps) => {
         { icon: Globe, title: 'Website Development', desc: 'Modern, responsive websites and web applications', color: 'text-blue-600' },
         { icon: Smartphone, title: 'UI/UX Design', desc: 'User-centered design for digital experiences', color: 'text-green-600' },
         { icon: Share2, title: 'Social Media Management', desc: 'Strategic social media presence and content', color: 'text-pink-600' },
+        { icon: Cpu, title: 'IT Consulting', desc: 'Smart, scalable IT solutions tailored to your business goals', color: 'text-slate-600' },
         // { icon: BarChart3, title: 'Digital Marketing', desc: 'Data-driven marketing campaigns and analytics', color: 'text-indigo-600' },
         // { icon: Printer, title: 'Printing Solutions', desc: 'High-quality print design and production', color: 'text-teal-600' }
     ];
@@ -471,10 +472,10 @@ const HomePage = ({ setCurrentPage }: HomePageProps) => {
             className="grid md:grid-cols-4 gap-8 mt-16 text-center"
           >
             {[
-              { number: "150+", label: "Happy Clients", icon: Users },
+              { number: "100+", label: "Happy Clients", icon: Users },
               { number: "500+", label: "Projects Completed", icon: Rocket },
               { number: "99%", label: "Client Satisfaction", icon: Star },
-              { number: "5★", label: "Average Rating", icon: Award }
+              { number: '24/7', label: 'Support', icon: Clock },
             ].map((stat, index) => (
               <motion.div
                 key={index}

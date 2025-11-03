@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Gibe Digital | We Design, You Shine",
   description: "Gibe Digital is a creative tech studio that blends design and technology to help businesses shine. We offer branding, web development, UI/UX, social media management, video editing, and digital marketing services.",
+  icons: {
+    icon: "/gibe.png",
+  },
 };
 
 export default function RootLayout({

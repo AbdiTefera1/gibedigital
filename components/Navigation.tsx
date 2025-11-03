@@ -2,6 +2,8 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Sparkles, Star, Zap } from 'lucide-react';
+import logo from '@/public/gibe.png'
+import Image from 'next/image';
 
 interface NavigationProps {
   currentPage: string;
@@ -37,26 +39,34 @@ const Navigation = ({ currentPage, setCurrentPage }: NavigationProps) => {
             >
               <motion.div 
                 className="relative w-12 h-12 rounded-2xl flex items-center justify-center overflow-hidden"
-                animate={{
-                  background: [
-                    'linear-gradient(45deg, #9333ea, #3b82f6)',
-                    'linear-gradient(45deg, #3b82f6, #ec4899)',
-                    'linear-gradient(45deg, #ec4899, #10b981)',
-                    'linear-gradient(45deg, #10b981, #9333ea)'
-                  ]
-                }}
-                transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                // animate={{
+                //   background: [
+                //     'linear-gradient(45deg, #9333ea, #3b82f6)',
+                //     'linear-gradient(45deg, #3b82f6, #ec4899)',
+                //     'linear-gradient(45deg, #ec4899, #10b981)',
+                //     'linear-gradient(45deg, #10b981, #9333ea)'
+                //   ]
+                // }}
+                // transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
               >
-                <motion.span 
+                {/* <motion.span 
                   className="text-white font-bold text-xl relative z-10"
                   animate={{ rotate: [0, 5, -5, 0] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 >
                   G
-                </motion.span>
+                </motion.span> */}
+                <Image 
+                  src={logo} 
+                  alt="Gibe Digital Logo" 
+                  fill={false}
+                  width={48}
+                  height={48}
+                  className="object-contain"
+                />
                 
                 {/* Sparkle effects */}
-                <motion.div
+                {/* <motion.div
                   className="absolute top-1 right-1"
                   animate={{ 
                     scale: [0, 1, 0],
@@ -69,16 +79,16 @@ const Navigation = ({ currentPage, setCurrentPage }: NavigationProps) => {
                   }}
                 >
                   <Sparkles className="w-3 h-3 text-yellow-300" />
-                </motion.div>
+                </motion.div> */}
               </motion.div>
               
               <div className="ml-3">
                 <motion.span 
-                  className="text-2xl font-bold bg-gradient-to-r from-purple-600 via-blue-600 to-pink-600 bg-clip-text text-transparent"
-                  animate={{
-                    backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
-                  }}
-                  transition={{ duration: 3, repeat: Infinity }}
+                  className="text-2xl font-bold text-[#334455] bg-clip-text"
+                  // animate={{
+                  //   backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
+                  // }}
+                  // transition={{ duration: 3, repeat: Infinity }}
                   style={{ backgroundSize: '200% 200%' }}
                 >
                   Gibe Digital

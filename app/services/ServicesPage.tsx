@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
   Palette, Globe, Smartphone, Share2,
-  Star, ArrowRight, Check, Zap, Sparkles, Eye, TrendingUp
+  Star, ArrowRight, Check, Zap, Sparkles, Eye, TrendingUp,
+  Cpu
 } from 'lucide-react'
 
 interface ServicesPageProps {
@@ -64,6 +65,21 @@ const ServicesPage = ({ setCurrentPage }: ServicesPageProps) => {
       gradient: 'from-orange-500 to-amber-500',
       bgGradient: 'from-orange-50 to-amber-50'
     },
+    {
+      icon: Cpu, 
+      title: 'IT Consulting',
+      desc: 'Professional technology consulting that aligns your business goals with smart, scalable IT solutions.',
+      category: 'it consulting',
+      features: [
+        'System Analysis & Planning',
+        'Infrastructure Optimization',
+        'Software Integration',
+        'Technical Support & Maintenance'
+      ],
+      // price: 'From $699',
+      gradient: 'from-slate-500 to-blue-500',
+      bgGradient: 'from-slate-50 to-blue-50'
+    },
     // { 
     //   icon: BarChart3, 
     //   title: 'Digital Marketing', 
@@ -91,6 +107,7 @@ const ServicesPage = ({ setCurrentPage }: ServicesPageProps) => {
     { id: 'design', name: 'Design', icon: Palette },
     { id: 'development', name: 'Development', icon: Globe },
     { id: 'marketing', name: 'Marketing', icon: TrendingUp },
+    { id: 'it consulting', name: 'IT Consulting', icon: Cpu },
     // { id: 'media', name: 'Media', icon: Video }
   ];
 
