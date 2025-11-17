@@ -85,9 +85,9 @@ const ContactPage = ({ setCurrentPage }: ContactPageProps) => {
     ];
 
     return (
-        <div className="pt-24 min-h-screen">
+        <div className="min-h-screen">
             {/* Hero Section */}
-            <section className="py-16 relative overflow-hidden">
+            <section className="py-20 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900" />
                 <div className="absolute inset-0 bg-black/20" />
                 
