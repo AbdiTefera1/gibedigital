@@ -137,7 +137,7 @@ const BookingPage = ({ setCurrentPage }: BookingPageProps) => {
     }
 
     return (
-      <div className="pt-24 pb-16 min-h-screen">
+      <div className="pt-20 pb-16 min-h-screen">
         {/* Hero Section */}
         <section className="py-20 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900" />

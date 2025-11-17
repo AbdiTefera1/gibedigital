@@ -138,7 +138,7 @@ const PortfolioPage = ({ setCurrentPage }: PortfolioPageProps) => {
   const featuredItems = portfolioItems.filter(item => item.featured);
 
   return (
-    <div className="pt-24 min-h-screen">
+    <div className="pt-20 min-h-screen">
       {/* Hero Section */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900" />
