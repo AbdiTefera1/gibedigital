@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion';
+import { BookingService } from '@/services/booking';
 import { 
   Send, Clock, Star, CheckCircle, ArrowRight, 
   User, Mail, Phone, MessageSquare, Briefcase, Zap,
@@ -23,6 +24,10 @@ const BookingPage = ({ setCurrentPage }: BookingPageProps) => {
     const [currentStep, setCurrentStep] = useState(1);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [focusedField, setFocusedField] = useState('');
+
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitError, setSubmitError] = useState<string>('');
+    const [validationErrors, setValidationErrors] = useState<string[]>([]);
 
     const services = [
         { title: 'Graphics & Branding', icon: '🎨', price: 'From $299' },
@@ -49,16 +54,54 @@ const BookingPage = ({ setCurrentPage }: BookingPageProps) => {
       { value: 'flexible', label: 'Flexible Timeline', icon: '🌊' }
     ];
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      setIsSubmitted(true);
-      // Simulate API call
-      setTimeout(() => {
-        setFormData({ name: '', email: '', phone: '', service: '', budget: '', timeline: '', message: '' });
-        setCurrentStep(1);
-        setIsSubmitted(false);
-      }, 3000);
-    };
+      
+      // Reset errors
+      setSubmitError('');
+      setValidationErrors([]);
+      
+      // Validate form data
+      const errors = BookingService.validateBookingData(formData);
+      if (errors.length > 0) {
+          setValidationErrors(errors);
+          return;
+      }
+
+      setIsSubmitting(true);
+
+      try {
+          const response = await BookingService.submitBooking(formData);
+
+          if (response.success) {
+              setIsSubmitted(true);
+              // Reset form after successful submission
+              setTimeout(() => {
+                  setFormData({ 
+                      name: '', 
+                      email: '', 
+                      phone: '', 
+                      service: '', 
+                      budget: '', 
+                      timeline: '', 
+                      message: '' 
+                  });
+                  setCurrentStep(1);
+                  setIsSubmitted(false);
+              }, 3000);
+          } else {
+              setSubmitError(response.error || 'Failed to submit booking');
+              if (response.details) {
+                  setValidationErrors(response.details.map(d => d.message));
+              }
+          }
+      } catch (error) {
+          setSubmitError('Network error. Please try again.');
+          console.error('Booking submission failed:', error);
+      } finally {
+          setIsSubmitting(false);
+      }
+  };
 
     const nextStep = () => {
       if (currentStep < 3) setCurrentStep(currentStep + 1);
@@ -246,6 +289,38 @@ const BookingPage = ({ setCurrentPage }: BookingPageProps) => {
               <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-blue-100 to-cyan-100 rounded-full translate-y-24 -translate-x-24 opacity-50" />
 
               <form onSubmit={handleSubmit} className="relative z-10">
+                {validationErrors.length > 0 && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6"
+                  >
+                    <h4 className="text-red-800 font-semibold mb-2">
+                      Please fix the following errors:
+                    </h4>
+                    <ul className="text-red-700 text-sm space-y-1">
+                      {validationErrors.map((error, index) => (
+                        <li key={index} className="flex items-center gap-2">
+                          <span className="w-1 h-1 bg-red-500 rounded-full" />
+                          {error}
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                )}
+
+                {submitError && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6 text-center"
+                  >
+                    <p className="text-red-800 font-semibold">{submitError}</p>
+                    <p className="text-red-600 text-sm mt-1">
+                      Please try again or contact support if the problem persists.
+                    </p>
+                  </motion.div>
+                )}
                 <AnimatePresence mode="wait">
                   {/* Step 1: Personal Information */}
                   {currentStep === 1 && (
@@ -547,21 +622,46 @@ const BookingPage = ({ setCurrentPage }: BookingPageProps) => {
                         <ArrowRight className="w-5 h-5" />
                       </motion.button>
                     ) : (
+                      // <motion.button
+                      //   type="submit"
+                      //   disabled={!isStepValid()}
+                      //   className={`px-8 py-4 rounded-xl font-semibold flex items-center gap-3 transition-all duration-300 ${
+                      //     isStepValid()
+                      //       ? 'bg-linear-to-r from-green-600 to-emerald-600 text-white hover:shadow-lg'
+                      //       : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                      //   }`}
+                      //   whileHover={isStepValid() ? { scale: 1.05 } : {}}
+                      //   whileTap={isStepValid() ? { scale: 0.95 } : {}}
+                      // >
+                      //   <Send className="w-5 h-5" />
+                      //   Submit Booking
+                      //   <Sparkles className="w-5 h-5" />
+                      // </motion.button>
+
                       <motion.button
-                        type="submit"
-                        disabled={!isStepValid()}
-                        className={`px-8 py-4 rounded-xl font-semibold flex items-center gap-3 transition-all duration-300 ${
-                          isStepValid()
-                            ? 'bg-linear-to-r from-green-600 to-emerald-600 text-white hover:shadow-lg'
-                            : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                        }`}
-                        whileHover={isStepValid() ? { scale: 1.05 } : {}}
-                        whileTap={isStepValid() ? { scale: 0.95 } : {}}
-                      >
-                        <Send className="w-5 h-5" />
-                        Submit Booking
-                        <Sparkles className="w-5 h-5" />
-                      </motion.button>
+                      type="submit"
+                      disabled={!isStepValid() || isSubmitting}
+                      className={`px-8 py-4 rounded-xl font-semibold flex items-center gap-3 transition-all duration-300 ${
+                          isStepValid() && !isSubmitting
+                              ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white hover:shadow-lg'
+                              : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                      }`}
+                      whileHover={isStepValid() && !isSubmitting ? { scale: 1.05 } : {}}
+                      whileTap={isStepValid() && !isSubmitting ? { scale: 0.95 } : {}}
+                  >
+                      {isSubmitting ? (
+                          <>
+                              <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                              Submitting...
+                          </>
+                      ) : (
+                          <>
+                              <Send className="w-5 h-5" />
+                              Submit Booking
+                              <Sparkles className="w-5 h-5" />
+                          </>
+                      )}
+                  </motion.button>
                     )}
                   </div>
                 </div>

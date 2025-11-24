@@ -13,17 +13,17 @@ interface PortfolioPageProps {
 const PortfolioPage = ({ setCurrentPage }: PortfolioPageProps) => {
   const portfolioItems = [
     { 
-      id: 1, 
-      title: 'TechFlow E-commerce Platform', 
+      id: 6, 
+      title: 'Rejoice Engineering & Electromechanical Works', 
       category: 'Web', 
-      image: 'bg-gradient-to-br from-blue-500 via-purple-600 to-indigo-700',
-      description: 'Modern e-commerce platform with AI-powered recommendations',
-      tech: ['React', 'Node.js', 'AI/ML'],
-      likes: 124,
-      views: 2400,
-      featured: true,
-      client: 'TechFlow Inc.',
-      year: '2024'
+      image: 'bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-600',
+      description: 'Professional website for electromechanical engineering firm offering industrial automation, electrical installations, and 24/7 emergency services with interactive booking features',
+      tech: ['Vercel', 'React', 'Modern Web Design'],
+      likes: 112,
+      views: 2800,
+      featured: false,
+      client: 'Rejoice Engineering',
+      year: '2025'
     },
     { 
       id: 2, 

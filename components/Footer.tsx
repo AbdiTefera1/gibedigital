@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { 
   Facebook, Instagram, Linkedin, Twitter, Youtube, MessageCircle,
-  Mail, Phone, MapPin, ArrowRight, Heart, Star, Zap,
+  Mail, Phone, MapPin, ArrowRight, Heart, Star,
   Send, Contact
 } from 'lucide-react'
 import logo from '@/public/gibe.png'
