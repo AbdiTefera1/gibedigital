@@ -8,6 +8,8 @@ const nextConfig = {
       '@/app': './app',  // Explicit for app/
     },
   },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],  // Add if missing
+  "exclude": ["node_modules"],
 };
 
 export default nextConfig;
