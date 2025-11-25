@@ -34,3 +34,34 @@ model Booking {
   @@index([email])
   @@index([service])
 }
+
+model Post {
+  id             String   @id @default(uuid())
+  title          String
+  slug           String   @unique
+  excerpt        String
+  content        String
+  coverImage     String
+  category       String
+  tags           String[]
+  authorName     String
+  authorImage    String
+  seoTitle       String
+  seoDescription String
+  published      Boolean  @default(false)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@map("posts")
+}
+
+model User {
+  id                String   @id @default(cuid())
+  email             String   @unique
+  password          String
+  role              String   @default("USER")
+  permissions       String[] @default([])
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  hashedRefreshToken String?  // store hashed refresh token for rotation/invalidating
+}
