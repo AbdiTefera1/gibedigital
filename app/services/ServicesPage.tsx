@@ -104,8 +104,8 @@ const ServicesPage = ({ setCurrentPage }: ServicesPageProps) => {
 
   const categories = [
     { id: 'all', name: 'All Services', icon: Sparkles },
-    { id: 'design', name: 'Design', icon: Palette },
     { id: 'development', name: 'Development', icon: Globe },
+    { id: 'design', name: 'Design', icon: Palette },
     { id: 'marketing', name: 'Marketing', icon: TrendingUp },
     { id: 'it consulting', name: 'IT Consulting', icon: Cpu },
     // { id: 'media', name: 'Media', icon: Video }
