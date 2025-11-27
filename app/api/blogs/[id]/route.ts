@@ -4,16 +4,17 @@ import { prisma } from '@/lib/prisma'
 import { updatePostSchema } from '@/lib/validations/post'
 import { createUniqueSlug } from '@/lib/utils/slug'
 import { authGuard } from '@/lib/authGuard'
+import type { Prisma } from '@/app/generated/prisma/client'
 
-interface RouteParams {
-  params: {
+interface RouteContext {
+  params: Promise<{
     id: string
-  }
+  }>
 }
 
 export async function PUT(
   request: NextRequest,
-  { params }: RouteParams
+  context: RouteContext
 ) {
   try {
     // Authentication check
@@ -25,7 +26,7 @@ export async function PUT(
       )
     }
 
-    const { id } = params
+    const { id } = await context.params
     const body = await request.json()
 
     // Validate request body
@@ -54,7 +55,7 @@ export async function PUT(
     }
 
     const data = validationResult.data
-    let updateData: any = { ...data }
+    const updateData: Prisma.PostUpdateInput = { ...data }
 
     // Generate new slug if title is being updated
     if (data.title && data.title !== existingPost.title) {
@@ -80,7 +81,7 @@ export async function PUT(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: RouteParams
+  context: RouteContext
 ) {
   try {
     // Authentication check
@@ -92,7 +93,7 @@ export async function DELETE(
       )
     }
 
-    const { id } = params
+    const { id } = await context.params
 
     // Check if post exists
     const existingPost = await prisma.post.findUnique({
@@ -128,10 +129,10 @@ export async function DELETE(
 
 export async function GET(
   request: NextRequest,
-  { params }: RouteParams
+  context: RouteContext
 ) {
   try {
-    const { id } = params
+    const { id } = await context.params
 
     const post = await prisma.post.findUnique({
       where: { id }

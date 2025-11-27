@@ -30,20 +30,20 @@ const BookingPage = ({ setCurrentPage }: BookingPageProps) => {
     const [validationErrors, setValidationErrors] = useState<string[]>([]);
 
     const services = [
-        { title: 'Graphics & Branding', icon: '🎨', price: 'From $299' },
-        { title: 'Video Production', icon: '🎬', price: 'From $499' },
-        { title: 'Website Development', icon: '💻', price: 'From $799' },
-        { title: 'UI/UX Design', icon: '📱', price: 'From $599' },
-        { title: 'Social Media Management', icon: '📱', price: 'From $399' },
-        { title: 'Digital Marketing', icon: '📊', price: 'From $699' },
-        { title: 'Print Solutions', icon: '🖨️', price: 'From $199' }
+        { title: 'Website Development', icon: '💻', price: 'From 20,000' },
+        { title: 'Graphics & Branding', icon: '🎨', price: 'From 5,000ETB' },
+        // { title: 'Video Production', icon: '🎬', price: 'From $499' },
+        { title: 'UI/UX Design', icon: '📱', price: '10,000' },
+        { title: 'Social Media Management', icon: '📱', price: 'From 11, 000' },
+        // { title: 'Digital Marketing', icon: '📊', price: 'From $699' },
+        // { title: 'Print Solutions', icon: '🖨️', price: 'From $199' }
     ];
 
     const budgetOptions = [
-      { value: 'under-1000', label: 'Under $1,000', icon: '💰' },
-      { value: '1000-5000', label: '$1,000 - $5,000', icon: '💎' },
-      { value: '5000-10000', label: '$5,000 - $10,000', icon: '👑' },
-      { value: 'over-10000', label: '$10,000+', icon: '🚀' }
+      { value: 'under-20000', label: 'Under 20,000', icon: '💰' },
+      { value: '20000-50000', label: '20,000 - 50,000', icon: '💎' },
+      { value: '50000-200000', label: '50,000 - 200,000', icon: '👑' },
+      { value: 'over-200000', label: '200,000+', icon: '🚀' }
     ];
 
     const timelineOptions = [

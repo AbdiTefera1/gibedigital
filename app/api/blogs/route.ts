@@ -1,6 +1,7 @@
 // app/api/posts/route.ts
 import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
+import type { Prisma } from '@/app/generated/prisma/client'
 import { createPostSchema, postsQuerySchema } from '@/lib/validations/post'
 import { createUniqueSlug } from '@/lib/utils/slug'
 import { authGuard } from '@/lib/authGuard'
@@ -89,7 +90,7 @@ export async function GET(request: NextRequest) {
     const { page, limit, category, tag, published } = queryResult.data
 
     // Build where clause
-    const where: any = {}
+    const where: Prisma.PostWhereInput = {}
     
     if (published !== undefined) {
       where.published = published

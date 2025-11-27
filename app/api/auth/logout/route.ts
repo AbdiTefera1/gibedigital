@@ -19,12 +19,12 @@ export async function POST(req: Request) {
       // attempt to decode to find user id and clear hashed token
       // NOTE: safe to ignore errors; we simply try to clear DB entry
       try {
-        const jwt = (await import("@/lib/jwt")) as any;
-        const decoded = jwt.verifyToken(refreshToken);
+        const jwtModule = (await import("@/lib/jwt")) as typeof import("@/lib/jwt");
+        const decoded = jwtModule.verifyToken(refreshToken);
         if (decoded?.userId) {
           await prisma.user.update({ where: { id: decoded.userId }, data: { hashedRefreshToken: null } });
         }
-      } catch (e) {
+      } catch (_error) {
         // ignore
       }
     }

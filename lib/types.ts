@@ -19,6 +19,20 @@ export interface CreatePostData {
   published?: boolean
 }
 
+export interface PostAtr {
+  id: string
+  title: string
+  slug: string
+  excerpt: string
+  content: string
+  coverImage: string
+  category: string
+  tags: string[]
+  authorName: string
+  authorImage: string
+  createdAt: string
+}
+
 export interface UpdatePostData extends Partial<CreatePostData> {
   title?: string
 }

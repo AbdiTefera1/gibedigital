@@ -2,18 +2,18 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
 
-interface RouteParams {
-  params: {
+interface RouteContext {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export async function GET(
   request: NextRequest,
-  { params }: RouteParams
+  context: RouteContext
 ) {
   try {
-    const { slug } = params
+    const { slug } = await context.params
 
     if (!slug) {
       return NextResponse.json(

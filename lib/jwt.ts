@@ -25,7 +25,7 @@ export function signRefreshToken(payload: JWTPayload) {
 export function verifyToken(token: string) {
   try {
     return jwt.verify(token, env.JWT_SECRET) as JWTPayload & { iat?: number; exp?: number };
-  } catch (e) {
+  } catch (_error) {
     return null;
   }
 }
