@@ -4,14 +4,13 @@ import { comparePassword, hashToken } from "@/lib/hash";
 import { signAccessToken, signRefreshToken } from "@/lib/jwt";
 import { prisma } from "@/lib/prisma";
 
-const ACCESS_TOKEN_COOKIE = "access_token";
-const REFRESH_TOKEN_COOKIE = "refresh_token";
+
 
 // Helper to set cookies on NextResponse
 function attachAuthCookies(res: NextResponse, accessToken: string, refreshToken: string) {
   // access cookie: short lived
   res.cookies.set({
-    name: ACCESS_TOKEN_COOKIE,
+    name: process.env.ACCESS_TOKEN_COOKIE ?? "access_token",
     value: accessToken,
     httpOnly: true,
     path: "/",
@@ -22,7 +21,7 @@ function attachAuthCookies(res: NextResponse, accessToken: string, refreshToken:
 
   // refresh cookie: long lived
   res.cookies.set({
-    name: REFRESH_TOKEN_COOKIE,
+    name: process.env.REFRESH_TOKEN_COOKIE ?? "refresh_token",
     value: refreshToken,
     httpOnly: true,
     path: "/api/auth/refresh",

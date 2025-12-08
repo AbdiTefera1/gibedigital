@@ -11,7 +11,12 @@ export interface JWTPayload {
 
 // These are only evaluated when the functions are called (runtime)
 // const getJwtSecret = () => env.JWT_SECRET as Secret;
+// const jwtSecret = process.env.JWT_SECRET as Secret;
 const jwtSecret = process.env.JWT_SECRET as Secret;
+if (!jwtSecret) {
+  throw new Error("Missing required environment variable: JWT_SECRET");
+}
+
 const accessExpires = process.env.ACCESS_TOKEN_EXPIRES_IN as SignOptions["expiresIn"] ?? "15m";
 const refreshExpires = process.env.REFRESH_TOKEN_EXPIRES_IN as SignOptions["expiresIn"] ?? "7d";
 
