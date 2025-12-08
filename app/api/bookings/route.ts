@@ -15,7 +15,7 @@ const bookingSchema = z.object({
   email: z.email('Invalid email address').max(255, 'Email too long'),
   phone: z.string().min(10, 'Phone number too short').max(20, 'Phone number too long'),
   service: z.string().min(1, 'Service is required').max(100, 'Service name too long'),
-  budget: z.enum(['under-1000','1000-5000','5000-10000','over-10000'], {
+  budget: z.enum(['under-20000','20000-50000','50000-200000','over-200000'], {
     error: () => ({ message: 'Invalid budget range' })
   }),
   timeline: z.enum(['asap', '1-2weeks', '1month', '2-3months', 'flexible'], {
@@ -61,10 +61,10 @@ function checkRateLimit(ip: string): boolean {
 // Email template
 function createEmailTemplate(booking: BookingType): string {
   const budgetMap = {
-    'under-1000': 'Under $1,000',
-    '1000-5000': '$1,000 - $5,000',
-    '5000-10000': '$5,000 - $10,000',
-    'over-10000': '$10,000+'
+    'under-20000': 'Under 20,000 ETB',
+    '20000-50000': '20,000 - 50,000 ETB',
+    '50000-200000': '50,000 - 200,000 ETB',
+    'over-200000': '200,000+ ETB'
   };
 
   const timelineMap = {

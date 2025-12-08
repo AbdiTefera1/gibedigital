@@ -30,20 +30,21 @@ const BookingPage = ({ setCurrentPage }: BookingPageProps) => {
     const [validationErrors, setValidationErrors] = useState<string[]>([]);
 
     const services = [
-        { title: 'Website Development', icon: '💻', price: 'From 20,000' },
-        { title: 'Graphics & Branding', icon: '🎨', price: 'From 5,000ETB' },
+        { title: 'Website Development', icon: '💻', price: 'From 20,000ETB' },
+        { title: 'Medium Level Software Development', icon: '🎨', price: 'From 50,000ETB' },
         // { title: 'Video Production', icon: '🎬', price: 'From $499' },
-        { title: 'UI/UX Design', icon: '📱', price: '10,000' },
-        { title: 'Social Media Management', icon: '📱', price: 'From 11, 000' },
-        // { title: 'Digital Marketing', icon: '📊', price: 'From $699' },
+        { title: 'UI/UX Design', icon: '📱', price: '10,000ETB' },
+        // { title: 'Social Media Management', icon: '📱', price: 'From 11, 000' },
+        { title: 'IT Consulting', icon: '💻', price: 'From 15,000ETB' },
+        { title: 'Digital Marketing', icon: '📊', price: 'From 15, 000ETB' },
         // { title: 'Print Solutions', icon: '🖨️', price: 'From $199' }
     ];
 
     const budgetOptions = [
-      { value: 'under-20000', label: 'Under 20,000', icon: '💰' },
-      { value: '20000-50000', label: '20,000 - 50,000', icon: '💎' },
-      { value: '50000-200000', label: '50,000 - 200,000', icon: '👑' },
-      { value: 'over-200000', label: '200,000+', icon: '🚀' }
+      { value: 'under-20000', label: 'Under 20,000 ETB', icon: '💰' },
+      { value: '20000-50000', label: '20,000 - 50,000 ETB', icon: '💎' },
+      { value: '50000-200000', label: '50,000 - 200,000 ETB', icon: '👑' },
+      { value: 'over-200000', label: '200,000+ ETB', icon: '🚀' }
     ];
 
     const timelineOptions = [
@@ -335,74 +336,86 @@ const BookingPage = ({ setCurrentPage }: BookingPageProps) => {
                         <h2 className="text-3xl font-bold text-gray-900 mb-4">Tell Us About Yourself</h2>
                         <p className="text-gray-600">Let&apos;s start with some basic information so we can personalize your experience.</p>
                       </div>
-
+{/* // step 1 form */}
                       <div className="grid md:grid-cols-2 gap-6">
-                        <div className="relative">
-                          <label className="block text-sm font-semibold text-gray-700 mb-3 flex items-center gap-2">
-                            <User className="w-4 h-4" />
-                            Full Name
-                          </label>
-                          <motion.input
-                            type="text"
-                            required
-                            value={formData.name}
-                            onChange={(e) => setFormData({...formData, name: e.target.value})}
-                            onFocus={() => setFocusedField('name')}
-                            onBlur={() => setFocusedField('')}
-                            className={`w-full px-4 py-4 border-2 rounded-xl transition-all duration-300 ${
-                              focusedField === 'name' || formData.name
-                                ? 'border-purple-500 bg-purple-50'
-                                : 'border-gray-200 hover:border-gray-300'
-                            }`}
-                            placeholder="Your full name"
-                            whileFocus={{ scale: 1.02 }}
-                          />
-                        </div>
 
-                        <div className="relative">
-                          <label className="block text-sm font-semibold text-gray-700 mb-3 flex items-center gap-2">
-                            <Mail className="w-4 h-4" />
-                            Email Address
-                          </label>
-                          <motion.input
-                            type="email"
-                            required
-                            value={formData.email}
-                            onChange={(e) => setFormData({...formData, email: e.target.value})}
-                            onFocus={() => setFocusedField('email')}
-                            onBlur={() => setFocusedField('')}
-                            className={`w-full px-4 py-4 border-2 rounded-xl transition-all duration-300 ${
-                              focusedField === 'email' || formData.email
-                                ? 'border-purple-500 bg-purple-50'
-                                : 'border-gray-200 hover:border-gray-300'
-                            }`}
-                            placeholder="your@email.com"
-                            whileFocus={{ scale: 1.02 }}
-                          />
-                        </div>
-                      </div>
-
+                      {/* Full Name */}
                       <div className="relative">
                         <label className="block text-sm font-semibold text-gray-700 mb-3 flex items-center gap-2">
-                          <Phone className="w-4 h-4" />
-                          Phone Number
+                          <User className="w-4 h-4" />
+                          Full Name
                         </label>
                         <motion.input
-                          type="tel"
+                          type="text"
                           required
-                          value={formData.phone}
-                          onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                          onFocus={() => setFocusedField('phone')}
-                          onBlur={() => setFocusedField('')}
-                          className={`w-full px-4 py-4 border-2 rounded-xl transition-all duration-300 ${
-                            focusedField === 'phone' || formData.phone
-                              ? 'border-purple-500 bg-purple-50'
-                              : 'border-gray-200 hover:border-gray-300'
-                          }`}
-                          placeholder="+251-XXX-XXX-XXX"
+                          value={formData.name}
+                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                          onFocus={() => setFocusedField("name")}
+                          onBlur={() => setFocusedField("")}
+                          className={`w-full px-4 py-3 md:py-4 border-2 rounded-xl transition-all duration-300
+                            text-gray-900 placeholder-gray-400
+                            ${
+                              focusedField === "name" || formData.name
+                                ? "border-purple-500 bg-purple-50"
+                                : "border-gray-200 hover:border-gray-300 bg-white"
+                            }`}
+                          placeholder="Your full name"
                           whileFocus={{ scale: 1.02 }}
                         />
                       </div>
+
+                      {/* Email Address */}
+                      <div className="relative">
+                        <label className="block text-sm font-semibold text-gray-700 mb-3 flex items-center gap-2">
+                          <Mail className="w-4 h-4" />
+                          Email Address
+                        </label>
+                        <motion.input
+                          type="email"
+                          required
+                          value={formData.email}
+                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                          onFocus={() => setFocusedField("email")}
+                          onBlur={() => setFocusedField("")}
+                          className={`w-full px-4 py-3 md:py-4 border-2 rounded-xl transition-all duration-300
+                            text-gray-900 placeholder-gray-400
+                            ${
+                              focusedField === "email" || formData.email
+                                ? "border-purple-500 bg-purple-50"
+                                : "border-gray-200 hover:border-gray-300 bg-white"
+                            }`}
+                          placeholder="your@email.com"
+                          whileFocus={{ scale: 1.02 }}
+                        />
+                      </div>
+
+                      </div>
+
+                      {/* Phone Number */}
+                      <div className="relative mt-6">
+                      <label className="block text-sm font-semibold text-gray-700 mb-3 flex items-center gap-2">
+                        <Phone className="w-4 h-4" />
+                        Phone Number
+                      </label>
+                      <motion.input
+                        type="tel"
+                        required
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        onFocus={() => setFocusedField("phone")}
+                        onBlur={() => setFocusedField("")}
+                        className={`w-full px-4 py-3 md:py-4 border-2 rounded-xl transition-all duration-300
+                          text-gray-900 placeholder-gray-400
+                          ${
+                            focusedField === "phone" || formData.phone
+                              ? "border-purple-500 bg-purple-50"
+                              : "border-gray-200 hover:border-gray-300 bg-white"
+                          }`}
+                        placeholder="+251-XXX-XXX-XXX"
+                        whileFocus={{ scale: 1.02 }}
+                      />
+                      </div>
+
                     </motion.div>
                   )}
 

@@ -3,7 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { 
   Palette, Globe, Smartphone, Share2,
   Star, ArrowRight, Check, Zap, Sparkles, Eye, TrendingUp,
-  Cpu
+  Cpu,
+  BarChart3,
+  Code
 } from 'lucide-react'
 
 interface ServicesPageProps {
@@ -45,6 +47,20 @@ const ServicesPage = ({ setCurrentPage }: ServicesPageProps) => {
       gradient: 'from-blue-500 to-cyan-500',
       bgGradient: 'from-blue-50 to-cyan-50'
     },
+    {
+      icon: Code,
+      title: 'Medium Level Software Development',
+      desc: 'Custom software solutions tailored for businesses needing secure, scalable, and workflow-enhancing applications.',
+      category: 'development',
+      features: [
+        'Business Process Automation',
+        'Custom Web Applications',
+        'API Development & Integration',
+        'Database Design & Optimization'
+      ],
+      gradient: 'from-indigo-500 to-blue-600',
+      bgGradient: 'from-indigo-50 to-blue-50'
+    },
     { 
       icon: Smartphone, 
       title: 'UI/UX Design', 
@@ -55,16 +71,16 @@ const ServicesPage = ({ setCurrentPage }: ServicesPageProps) => {
       gradient: 'from-emerald-500 to-teal-500',
       bgGradient: 'from-emerald-50 to-teal-50'
     },
-    { 
-      icon: Share2, 
-      title: 'Social Media Management', 
-      desc: 'Strategic social presence that builds communities and drives engagement',
-      category: 'marketing',
-      features: ['Content Strategy', 'Post Scheduling', 'Community Management', 'Analytics'],
-      // price: 'From $399',
-      gradient: 'from-orange-500 to-amber-500',
-      bgGradient: 'from-orange-50 to-amber-50'
-    },
+    // { 
+    //   icon: Share2, 
+    //   title: 'Social Media Management', 
+    //   desc: 'Strategic social presence that builds communities and drives engagement',
+    //   category: 'marketing',
+    //   features: ['Content Strategy', 'Post Scheduling', 'Community Management', 'Analytics'],
+    //   // price: 'From $399',
+    //   gradient: 'from-orange-500 to-amber-500',
+    //   bgGradient: 'from-orange-50 to-amber-50'
+    // },
     {
       icon: Cpu, 
       title: 'IT Consulting',
@@ -80,16 +96,16 @@ const ServicesPage = ({ setCurrentPage }: ServicesPageProps) => {
       gradient: 'from-slate-500 to-blue-500',
       bgGradient: 'from-slate-50 to-blue-50'
     },
-    // { 
-    //   icon: BarChart3, 
-    //   title: 'Digital Marketing', 
-    //   desc: 'Data-driven campaigns that maximize ROI and accelerate growth',
-    //   category: 'marketing',
-    //   features: ['PPC Advertising', 'Email Marketing', 'Analytics', 'Conversion Optimization'],
-    //   // price: 'From $699',
-    //   gradient: 'from-violet-500 to-purple-500',
-    //   bgGradient: 'from-violet-50 to-purple-50'
-    // },
+    { 
+      icon: BarChart3, 
+      title: 'Digital Marketing', 
+      desc: 'Data-driven campaigns that maximize ROI and accelerate growth',
+      category: 'marketing',
+      features: ['PPC Advertising', 'Email Marketing', 'Analytics', 'Conversion Optimization'],
+      // price: 'From $699',
+      gradient: 'from-violet-500 to-purple-500',
+      bgGradient: 'from-violet-50 to-purple-50'
+    },
     // { 
     //   icon: Printer, 
     //   title: 'Print Solutions', 
